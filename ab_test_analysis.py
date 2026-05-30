@@ -127,6 +127,13 @@ def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
         }
         df["group"] = df["group"].map(group_map).fillna(df["group"])
 
+    # Parse timestamp column to datetime if present (CSV loads it as string)
+    if "timestamp" in df.columns:
+        try:
+            df["timestamp"] = pd.to_datetime(df["timestamp"])
+        except Exception:
+            pass
+
     return df
 
 
@@ -311,12 +318,19 @@ def descriptive_analysis(df: pd.DataFrame) -> dict:
 
     ax.set_ylabel("Conversion Rate")
     ax.set_title("Conversion Rate by Group (with 95% CI)")
-    ax.set_ylim(bottom=min(rates) * 0.9, top=max(rates) * 1.1)
 
-    # Add rate labels on bars
-    for bar, rate in zip(bars, rates):
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.001,
+    # Position labels ABOVE the upper CI bound to avoid overlapping error bars
+    ci_tops = [ci_control[1], ci_treatment[1]]
+    y_label_offset = (max(rates) - min(rates) + max(ci_tops) - max(rates)) * 0.15 + 0.001
+    for bar, rate, ci_top in zip(bars, rates, ci_tops):
+        ax.text(bar.get_x() + bar.get_width() / 2, ci_top + y_label_offset,
                 f"{rate:.2%}", ha="center", va="bottom", fontweight="bold", fontsize=13)
+
+    # Expand ylim to show labels above error bars
+    y_min = min(rates) * 0.97
+    y_max = max(ci_tops) + y_label_offset * 4
+    ax.set_ylim(bottom=y_min, top=y_max)
+
 
     plt.tight_layout()
     fig.savefig(FIGURES_DIR / "conversion_rates_ci.png", dpi=150)

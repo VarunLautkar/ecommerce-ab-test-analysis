@@ -1,140 +1,91 @@
 {
-  "sanity": {
-    "duplicate_users": 0,
-    "srm_chi2": 0.0,
-    "srm_pvalue": 1.0,
-    "n_control": 150000,
-    "n_treatment": 150000
+  "conversion_rates": {
+    "control": 0.12599333333333335,
+    "treatment": 0.12701333333333334
   },
-  "descriptive": {
-    "cr_control": 0.12599333333333335,
-    "cr_treatment": 0.12701333333333334,
-    "absolute_diff": 0.0010199999999999931,
-    "relative_lift_pct": 0.8095666437377583
-  },
-  "frequentist": {
-    "z_statistic": 0.8403286931316596,
-    "p_value": 0.4007241177936389,
-    "ci_lower": -0.0013590225511911345,
-    "ci_upper": 0.0033990225511911208,
-    "decision": "fail_to_reject",
-    "z_scipy": 0.8403286931316596,
-    "p_scipy": 0.4007241177936389
-  },
-  "power": {
-    "cohens_h": 0.0030684523025271693,
-    "effect_interpretation": "negligible",
-    "achieved_power": 0.13398774359357044,
-    "required_n_per_group": 1667238,
-    "actual_n_per_group": 150000
-  },
-  "revenue": {
-    "additional_monthly_conversions": 510.0,
-    "monthly_revenue_impact_usd": 38250.0,
-    "annual_revenue_impact_usd": 459000.0,
-    "practically_significant": false
-  },
-  "segments": {
-    "segments": [
-      {
-        "segment": "device=mobile",
-        "n_control": 60120,
-        "n_treatment": 59964,
-        "cr_control": 0.10931470392548237,
-        "cr_treatment": 0.11093322660262825,
-        "difference": 0.0016185226771458783,
-        "p_value": 0.3703418701823369,
-        "significant_after_correction": "False"
-      },
-      {
-        "segment": "device=desktop",
-        "n_control": 67387,
-        "n_treatment": 67571,
-        "cr_control": 0.14082834968168934,
-        "cr_treatment": 0.141554809015702,
-        "difference": 0.0007264593340126635,
-        "p_value": 0.7015704681125174,
-        "significant_after_correction": "False"
-      },
-      {
-        "segment": "device=tablet",
-        "n_control": 22493,
-        "n_treatment": 22465,
-        "cr_control": 0.12612812875116702,
-        "cr_treatment": 0.1261963053638994,
-        "difference": 6.817661273236797e-05,
-        "p_value": 0.9826326098646618,
-        "significant_after_correction": "False"
-      },
-      {
-        "segment": "user_type=new",
-        "n_control": 89928,
-        "n_treatment": 89781,
-        "cr_control": 0.11921759629926164,
-        "cr_treatment": 0.12013677726913266,
-        "difference": 0.0009191809698710224,
-        "p_value": 0.5483418886802478,
-        "significant_after_correction": "False"
-      },
-      {
-        "segment": "user_type=returning",
-        "n_control": 60072,
-        "n_treatment": 60219,
-        "cr_control": 0.13613663603675588,
-        "cr_treatment": 0.13726564705491623,
-        "difference": 0.0011290110181603474,
-        "p_value": 0.5687293298969902,
-        "significant_after_correction": "False"
-      },
-      {
-        "segment": "time_period=morning",
-        "n_control": 37455,
-        "n_treatment": 37825,
-        "cr_control": 0.1273795220931785,
-        "cr_treatment": 0.12637144745538664,
-        "difference": -0.0010080746377918448,
-        "p_value": 0.6777738848045147,
-        "significant_after_correction": "False"
-      },
-      {
-        "segment": "time_period=afternoon",
-        "n_control": 37553,
-        "n_treatment": 37516,
-        "cr_control": 0.12667430032221128,
-        "cr_treatment": 0.12607953939652414,
-        "difference": -0.0005947609256871378,
-        "p_value": 0.8062901747124265,
-        "significant_after_correction": "False"
-      },
-      {
-        "segment": "time_period=evening",
-        "n_control": 31213,
-        "n_treatment": 30993,
-        "cr_control": 0.12273732098804985,
-        "cr_treatment": 0.12767399090117124,
-        "difference": 0.004936669913121389,
-        "p_value": 0.06285366583215383,
-        "significant_after_correction": "False"
-      },
-      {
-        "segment": "time_period=night",
-        "n_control": 43779,
-        "n_treatment": 43666,
-        "cr_control": 0.1265446903766646,
-        "cr_treatment": 0.1279027160720011,
-        "difference": 0.0013580256953364955,
-        "p_value": 0.546791638414788,
-        "significant_after_correction": "False"
-      }
-    ],
-    "bonferroni_alpha": 0.005555555555555556,
-    "simpsons_paradox_segments": 1
-  },
-  "bayesian": {
-    "prob_treatment_better": 0.7997,
-    "expected_lift": 0.001021949359976209,
-    "credible_interval_95_lower": -0.0013572447872020178,
-    "credible_interval_95_upper": 0.0034030710538379243
-  },
-  "recommendation": "EXTEND THE TEST"
+  "absolute_diff": 0.0010199999999999931,
+  "relative_lift_pct": 0.8095666437377583,
+  "z_statistic": 0.8403286931316596,
+  "p_value": 0.4007241177936389,
+  "cohens_h": 0.0030684523025271693,
+  "achieved_power": 0.13398774359357044,
+  "monthly_revenue_impact": 38249.999999999745,
+  "annual_revenue_impact": 458999.999999997,
+  "prob_treatment_better": 0.79797,
+  "expected_lift": 0.0010158649166381029,
+  "recommendation": "EXTEND THE TEST",
+  "segments": [
+    {
+      "segment": "device=mobile",
+      "cr_control": 0.10931470392548237,
+      "cr_treatment": 0.11093322660262825,
+      "difference": 0.0016185226771458783,
+      "p_value": 0.3703418701823369,
+      "significant": "False"
+    },
+    {
+      "segment": "device=desktop",
+      "cr_control": 0.14082834968168934,
+      "cr_treatment": 0.141554809015702,
+      "difference": 0.0007264593340126635,
+      "p_value": 0.7015704681125174,
+      "significant": "False"
+    },
+    {
+      "segment": "device=tablet",
+      "cr_control": 0.12612812875116702,
+      "cr_treatment": 0.1261963053638994,
+      "difference": 6.817661273236797e-05,
+      "p_value": 0.9826326098646618,
+      "significant": "False"
+    },
+    {
+      "segment": "user_type=new",
+      "cr_control": 0.11921759629926164,
+      "cr_treatment": 0.12013677726913266,
+      "difference": 0.0009191809698710224,
+      "p_value": 0.5483418886802478,
+      "significant": "False"
+    },
+    {
+      "segment": "user_type=returning",
+      "cr_control": 0.13613663603675588,
+      "cr_treatment": 0.13726564705491623,
+      "difference": 0.0011290110181603474,
+      "p_value": 0.5687293298969902,
+      "significant": "False"
+    },
+    {
+      "segment": "time_period=morning",
+      "cr_control": 0.1273795220931785,
+      "cr_treatment": 0.12637144745538664,
+      "difference": -0.0010080746377918448,
+      "p_value": 0.6777738848045147,
+      "significant": "False"
+    },
+    {
+      "segment": "time_period=afternoon",
+      "cr_control": 0.12667430032221128,
+      "cr_treatment": 0.12607953939652414,
+      "difference": -0.0005947609256871378,
+      "p_value": 0.8062901747124265,
+      "significant": "False"
+    },
+    {
+      "segment": "time_period=evening",
+      "cr_control": 0.12273732098804985,
+      "cr_treatment": 0.12767399090117124,
+      "difference": 0.004936669913121389,
+      "p_value": 0.06285366583215383,
+      "significant": "False"
+    },
+    {
+      "segment": "time_period=night",
+      "cr_control": 0.1265446903766646,
+      "cr_treatment": 0.1279027160720011,
+      "difference": 0.0013580256953364955,
+      "p_value": 0.546791638414788,
+      "significant": "False"
+    }
+  ]
 }

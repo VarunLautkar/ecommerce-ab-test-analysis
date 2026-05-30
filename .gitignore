@@ -11,8 +11,9 @@ venv/
 .vscode/
 .idea/
 
-# Data (download separately)
+# Data (download separately — but include the generated synthetic dataset)
 data/*.csv
+!data/ab_test_data.csv
 
 # OS files
 .DS_Store
