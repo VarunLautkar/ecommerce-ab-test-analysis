@@ -100,7 +100,8 @@ else:
                        "device": devices, "timestamp": timestamps, "hour": hours, "user_type": user_type})
 
 print(f"Dataset shape: {df.shape[0]:,} rows × {df.shape[1]} columns")
-df.head(10)
+print()
+print(df.head(10).to_string(index=False))
 """))
 
 cells.append(code("""# Sanity checks
