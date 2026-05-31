@@ -321,7 +321,7 @@ def descriptive_analysis(df: pd.DataFrame) -> dict:
 
     # Position labels ABOVE the upper CI bound to avoid overlapping error bars
     ci_tops = [ci_control[1], ci_treatment[1]]
-    y_label_offset = (max(rates) - min(rates) + max(ci_tops) - max(rates)) * 0.15 + 0.001
+    y_label_offset = 0.003  # fixed gap above error bar cap
     for bar, rate, ci_top in zip(bars, rates, ci_tops):
         ax.text(bar.get_x() + bar.get_width() / 2, ci_top + y_label_offset,
                 f"{rate:.2%}", ha="center", va="bottom", fontweight="bold", fontsize=13)
